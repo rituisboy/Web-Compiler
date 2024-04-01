@@ -10,13 +10,15 @@ const dbConnect_1 = require("./lib/dbConnect");
 const compilerRouter_1 = require("./routes/compilerRouter");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: "*",
+}));
 (0, dotenv_1.config)();
 (0, dbConnect_1.dbConnect)();
 app.use("/compiler", compilerRouter_1.compilerRouter);
 app.get("/", (req, res) => {
     // res.send(process.env.MONGO_URI);
-    res.send('home');
+    res.send("home");
 });
 app.listen(4000, () => {
     console.log("http://localhost:4000");

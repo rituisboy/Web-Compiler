@@ -6,14 +6,18 @@ import { compilerRouter } from "./routes/compilerRouter";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 config();
 dbConnect();
 
 app.use("/compiler", compilerRouter);
 app.get("/", (req: Request, res: Response) => {
   // res.send(process.env.MONGO_URI);
-  res.send('home');
+  res.send("home");
 });
 app.listen(4000, () => {
   console.log("http://localhost:4000");
