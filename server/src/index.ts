@@ -12,7 +12,8 @@ dbConnect();
 
 app.use("/compiler", compilerRouter);
 app.get("/", (req: Request, res: Response) => {
-  res.send(process.env.MONGO_URI);
+  // res.send(process.env.MONGO_URI);
+  res.send('home');
 });
 app.listen(4000, () => {
   console.log("http://localhost:4000");

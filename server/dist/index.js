@@ -15,7 +15,8 @@ app.use((0, cors_1.default)());
 (0, dbConnect_1.dbConnect)();
 app.use("/compiler", compilerRouter_1.compilerRouter);
 app.get("/", (req, res) => {
-    res.send(process.env.MONGO_URI);
+    // res.send(process.env.MONGO_URI);
+    res.send('home');
 });
 app.listen(4000, () => {
     console.log("http://localhost:4000");
