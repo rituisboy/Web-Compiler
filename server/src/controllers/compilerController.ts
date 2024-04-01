@@ -14,12 +14,12 @@ export const saveCode = async (req: Request, res: Response) => {
 };
 export const loadCode = async (req: Request, res: Response) => {
   const { urlId } = req.body;
-  console.log(urlId)
+  console.log(urlId);
   try {
-    const exisitingCode = await Code.findById(urlId)
-    res.send({fullCode:exisitingCode?.fullCode})
-    console.log(exisitingCode?.fullCode)
+    const exisitingCode = await Code.findById(urlId);
+    res.send({ fullCode: exisitingCode?.fullCode });
+    console.log(exisitingCode?.fullCode);
   } catch (error) {
-    res.status(500).send({message:'error loading code'});
+    res.status(500).send({ message: "error loading code" });
   }
 };

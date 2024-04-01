@@ -11,6 +11,9 @@ config();
 dbConnect();
 
 app.use("/compiler", compilerRouter);
+app.get("/", (req: Request, res: Response) => {
+  res.send("hello");
+});
 app.listen(4000, () => {
   console.log("http://localhost:4000");
 });
