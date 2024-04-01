@@ -1,15 +1,6 @@
 import { Button } from "./ui/button";
-import {
-  Check,
-  Code,
-  Copy,
-  LoaderCircle,
-  Save,
-  Share,
-  Share2,
-} from "lucide-react";
+import { Check, Code, Copy, LoaderCircle, Save, Share2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { Input } from "@/components/ui/input";
 
 import {
   CompilerSliceStateType,
@@ -25,7 +16,6 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -68,16 +58,7 @@ export default function HelperHeader() {
     }
   }, [urlId]);
 
-  
-
-  const tabCurrentLang = (value) => {
-    dispatch(
-      updateCurrentLanguage(
-        value as CompilerSliceStateType["currentLanguage"]
-      )
-    )
-  };
-  let currentLanguage = useSelector(
+  const currentLanguage = useSelector(
     (state: RootState) => state.compilerSlice.currentLanguage
   );
   const dispatch = useDispatch();
@@ -148,7 +129,7 @@ export default function HelperHeader() {
         )}
 
         <div className="flex justify-center items-center ml-3">
-          <TestTab tabCurrentLang={tabCurrentLang} />
+          <TestTab />
         </div>
       </div>
 

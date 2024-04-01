@@ -24,7 +24,7 @@ export default function Compiler() {
       dispatch(updateFullCode(response.data.fullCode));
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        if (error?.response?.status === "500") {
+        if (error?.response?.status == 500) {
           toast("invalid url");
         }
       }

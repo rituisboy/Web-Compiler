@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   CompilerSliceStateType,
   updateCurrentLanguage,
@@ -6,7 +6,7 @@ import {
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function TestTab({ tabCurrentLang }) {
+export default function TestTab() {
   const dispatch = useDispatch();
   const currentLanguage = useSelector(
     (state: RootState) => state.compilerSlice.currentLanguage
@@ -22,7 +22,6 @@ export default function TestTab({ tabCurrentLang }) {
                 value as CompilerSliceStateType["currentLanguage"]
               )
             );
-            tabCurrentLang("html");
           }}
           value="html"
         >
@@ -36,7 +35,6 @@ export default function TestTab({ tabCurrentLang }) {
                 value as CompilerSliceStateType["currentLanguage"]
               )
             );
-            tabCurrentLang("css");
           }}
           value="css"
         >
@@ -50,7 +48,6 @@ export default function TestTab({ tabCurrentLang }) {
                 value as CompilerSliceStateType["currentLanguage"]
               )
             );
-            tabCurrentLang("javascript");
           }}
           value="javascript"
         >
