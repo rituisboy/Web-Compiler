@@ -11,6 +11,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { updateFullCode } from "@/redux/slices/compilerSlice";
 import { toast } from "sonner";
+import { useEffect } from "react";
 
 export default function Compiler() {
   const dispatch = useDispatch();
