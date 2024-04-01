@@ -24,7 +24,7 @@ const loadCode = async (req, res) => {
         console.log(exisitingCode?.fullCode);
     }
     catch (error) {
-        res.status(500).send({ message: 'error loading code' });
+        res.status(500).send({ message: "error loading code" });
     }
 };
 exports.loadCode = loadCode;
