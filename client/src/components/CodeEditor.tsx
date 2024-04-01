@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { tags as t } from "@lezer/highlight";
 import { draculaInit } from "@uiw/codemirror-theme-dracula";
@@ -17,14 +17,9 @@ export default function CodeEditor() {
     (state: RootState) => state.compilerSlice.fullCode
   );
 
-  
-
-  const onChange = React.useCallback(
-    (value: string) => {
-      dispatch(updateCodeValue(value));
-    },
-    []
-  );
+  const onChange = React.useCallback((value: string) => {
+    dispatch(updateCodeValue(value));
+  }, []);
 
   return (
     <CodeMirror
