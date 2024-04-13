@@ -18,9 +18,12 @@ export default function Compiler() {
   const { urlId } = useParams();
   const loadCode = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/compiler/load", {
-        urlId,
-      });
+      const response = await axios.post(
+        "https://web-compiler-api.vercel.app/compiler/load",
+        {
+          urlId,
+        }
+      );
       dispatch(updateFullCode(response.data.fullCode));
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -37,7 +40,10 @@ export default function Compiler() {
   }, [urlId]);
 
   return (
-    <ResizablePanelGroup direction="horizontal" className="">
+    <ResizablePanelGroup
+      direction="horizontal"
+      className="h-[calc(100dvh-60px)] min-w-[350px]"
+    >
       <ResizablePanel
         className="h-[calc(100dvh-60px)] min-w-[350px]"
         defaultSize={50}
@@ -45,7 +51,7 @@ export default function Compiler() {
         <HelperHeader />
         <CodeEditor />
       </ResizablePanel>
-      <ResizableHandle className="w-2 bg-slate-600" withHandle />
+      <ResizableHandle withHandle className="h-[calc(100dvh-60px)] w-4" />
       <ResizablePanel
         className="h-[calc(100dvh-60px)] min-w-[350px]"
         defaultSize={50}

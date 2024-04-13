@@ -20,13 +20,8 @@ export default function RenderCode() {
     `;
 
   return (
-    <div className="h-[calc(100dvh-60px)]">
-      <iframe
-        loading="lazy"
-        className="w-full h-full"
-        title="html"
-        srcDoc={html}
-      />
+    <div className="bg-white h-[calc(100dvh-60px)]">
+      <iframe className="w-full h-full" srcDoc={html} />
     </div>
   );
 }
